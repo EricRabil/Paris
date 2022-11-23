@@ -1,3 +1,3 @@
-module AOSKit {
+module _AOSKit {
   header "AOSKit.h"
 }

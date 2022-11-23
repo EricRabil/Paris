@@ -4,8 +4,10 @@
 import PackageDescription
 
 extension Target {
-    static func privateFrameworkBinding(_ name: String, dependencies: [Dependency] = [], linkedFrameworkName: String? = nil) -> Target {
-        .target(name: name, dependencies: dependencies, linkerSettings: [
+    static func privateFrameworkBinding(_ name: String, dependencies: [String] = [], linkedFrameworkName: String? = nil) -> Target {
+        .target(name: "_\(name)", dependencies: dependencies.map {
+            .init(stringLiteral: "_\($0)")
+        }, path: "Sources/\(name)", linkerSettings: [
             .unsafeFlags(["-F/System/Library/PrivateFrameworks", "-framework", linkedFrameworkName ?? name])
         ])
     }
@@ -13,15 +15,15 @@ extension Target {
 
 extension Product {
     static func privateFrameworkBinding(_ name: String) -> Product {
-        .library(name: name, targets: [name])
+        .library(name: "_\(name)", targets: ["_\(name)"])
     }
 }
 
 extension Package {
     static var privateFrameworksByPackageName: [String: [String]] = [:]
     
-    func withPrivateFrameworkBinding(_ name: String, dependencies: [Target.Dependency] = [], linkedFrameworkName: String? = nil) -> Package {
-        Package.privateFrameworksByPackageName[self.name, default: []].append(name)
+    func withPrivateFrameworkBinding(_ name: String, dependencies: [String] = [], linkedFrameworkName: String? = nil) -> Package {
+        Package.privateFrameworksByPackageName[self.name, default: []].append("_\(name)")
         products.append(.privateFrameworkBinding(name))
         targets.append(.privateFrameworkBinding(name, dependencies: dependencies, linkedFrameworkName: linkedFrameworkName))
         return self

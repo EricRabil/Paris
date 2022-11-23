@@ -1,3 +1,3 @@
-module TextInput {
+module _TextInput {
   header "TextInput.h"
 }

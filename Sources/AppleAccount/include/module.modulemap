@@ -1,3 +1,3 @@
-module AppleAccount {
+module _AppleAccount {
   header "AppleAccount.h"
 }

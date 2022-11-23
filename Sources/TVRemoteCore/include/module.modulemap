@@ -1,3 +1,3 @@
-module TVRemoteCore {
+module _TVRemoteCore {
   header "TVRemoteCore.h"
 }

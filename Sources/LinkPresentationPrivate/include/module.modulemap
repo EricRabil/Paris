@@ -1,3 +1,3 @@
-module LinkPresentationPrivate {
+module _LinkPresentationPrivate {
   header "LinkPresentationPrivate.h"
 }
