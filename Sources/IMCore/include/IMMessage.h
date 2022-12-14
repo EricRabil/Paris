@@ -76,7 +76,7 @@ typedef NS_ENUM(NSInteger, IMMessageDescriptionType) {
 + (id)breadcrumbMessageWithText:(id)arg1 associatedMessageGUID:(id)arg2 balloonBundleID:(id)arg3 fileTransferGUIDs:(id)arg4 payloadData:(id)arg5 threadIdentifier:(id)arg6 API_AVAILABLE(macos(10.16), ios(14.0), watchos(7.0));
 + (id)editedMessageWithOriginalMessage:(id)arg1 originalPrefixedGUID:(id)arg2 newBody:(id)arg3;
 + (IMMessage*)instantMessageWithAssociatedMessageContent:(id)arg1 flags:(unsigned long long)arg2 associatedMessageGUID:(id)arg3 associatedMessageType:(long long)arg4 associatedMessageRange:(struct _NSRange)arg5 messageSummaryInfo:(id)arg6 ;
-+ (IMMessage*)instantMessageWithAssociatedMessageContent:(id)arg1 flags:(unsigned long long)arg2 associatedMessageGUID:(id)arg3 associatedMessageType:(long long)arg4 associatedMessageRange:(struct _NSRange)arg5 messageSummaryInfo:(id)arg6 threadIdentifier:(id)arg7 API_AVAILABLE(macos(10.16), ios(14.0), watchos(7.0));
++ (IMMessage*)instantMessageWithAssociatedMessageContent:(NSAttributedString *)arg1 flags:(unsigned long long)arg2 associatedMessageGUID:(NSString *)arg3 associatedMessageType:(long long)arg4 associatedMessageRange:(struct _NSRange)arg5 messageSummaryInfo:(NSDictionary *)arg6 threadIdentifier:(NSString *)arg7 API_AVAILABLE(macos(10.16), ios(14.0), watchos(7.0));
 @property(nonatomic) unsigned long long sortID; // @synthesize sortID=_sortID;
 @property(nonatomic) BOOL isSOS; // @synthesize isSOS=_isSOS;
 @property(retain, nonatomic) NSString *notificationIDSTokenURI; // @synthesize notificationIDSTokenURI=_notificationIDSTokenURI;

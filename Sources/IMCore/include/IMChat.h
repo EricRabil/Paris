@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger, IMChatJoinState) {
 + (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (BOOL)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
-+ (id)__im_adjustMessageSummaryInfoForSending:(id)arg1;
++ (NSDictionary *)__im_adjustMessageSummaryInfoForSending:(NSDictionary *)arg1 API_DEPRECATED("Use -[IMTapback adjustMessageSummaryInfoForSending:] instead", macos(10.0, 12.5), ios(10.0, 15.2));
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;

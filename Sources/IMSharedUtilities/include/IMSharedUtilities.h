@@ -134,6 +134,7 @@
 #import "IMSuperToPlainParserContext.h"
 #import "IMSuperToSuperSanitizerContext.h"
 #import "IMTapback.h"
+#import "IMTapbackSender.h"
 #import "IMTUConversationItem.h"
 #import "IMToSuperParserContext.h"
 #import "IMToSuperParserFrame.h"
