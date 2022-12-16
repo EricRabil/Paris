@@ -186,6 +186,7 @@ BOOL IMSPIQueryIMMessageItemsWithGUIDsAndQOS(NSArray<NSString *> *__strong, disp
 BOOL IMSPIQueryMessagesWithGUIDsAndQOS(NSArray<NSString *> *__strong, dispatch_qos_class_t, __strong dispatch_queue_t, __strong void (^)(NSArray*));
 NSObject* IMCopyDDScannerResultFromAttributedStringData(NSData*);
 BOOL IMCoreSimulatedEnvironmentEnabled();
+void _IMIntentsApiInit() API_AVAILABLE(macos(13.0));
 
 extern NSString* ABIMHandlesChangedNotification;
 extern NSString* IMAVChatInfoNotification;

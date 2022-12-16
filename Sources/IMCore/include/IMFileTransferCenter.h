@@ -52,7 +52,8 @@
 @property(readonly, nonatomic) __weak NSArray *activeTransfers;
 @property(readonly, nonatomic) NSDictionary<NSString*, IMFileTransfer*> *transfers;
 - (id)transfersForAccount:(id)arg1;
-- (void)retargetTransfer:(id)arg1 toPath:(id)arg2;
+// NOTICE: for retargetTransfer:, arg1 is an IMFileTransfer in < macOS 13.0, and it is an NSString in >= macOS 13.0 (the guid of the transfer)
+- (void)retargetTransfer:(id)arg1 toPath:(NSString *)path;
 - (void)deleteTransfer:(id)arg1;
 - (void)removeTransfer:(id)arg1;
 - (void)stopTransfer:(id)arg1;
